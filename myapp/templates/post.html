@@ -1,0 +1,18 @@
+{% extends 'basic.html' %}
+
+{% block title %}
+|POST
+{% endblock %}
+{% block body %}
+      <main class="container mb-5" >
+       
+        <div class="bg-light mt-5 p-5 rounded">   
+            <h1>{{blog.heading}}</h1>
+            <p class="lead">{{blog.desc}}</p>
+            <p>{{ bg.date}}</p>
+            <!-- <a class="btn btn-lg btn-primary" href="/docs/5.1/components/navbar/" role="button">View navbar docs »</a> -->
+        </div>
+     
+      </main>
+
+      {% endblock %}

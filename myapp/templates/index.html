@@ -1,0 +1,38 @@
+{% extends 'basic.html' %}
+{% block title %}
+|BLOG
+{% endblock %}
+
+    <!-- ------------------------------------------navbar End--------------------------------------------------------------- -->
+    {% block body %}
+    
+
+      <div class=" bg-light px-4 py-5 my-0 text-center rounded">
+        <!-- <img class="d-block mx-auto mb-4" src="1.jpg" alt="" width="72" height="57"> -->
+        <h1 class="display-5 fw-bold">Durgesh Soni</h1>
+        <div class="col-lg-6 mx-auto">
+          <p class="mb-4">I’m a web developer. Currently working as a freelancer. I spend my whole day, practically every day, experimenting with HTML, CSS, and JavaScript; dabbling with Python and django . I build websites that delight and inform. I do it well.
+            I’m curious, and I enjoy work that challenges me to learn something new and stretch in a different direction. I find interesting enough to share.....</p>
+          <!-- <div class="d-grid gap-2 d-sm-flex justify-content-sm-center">
+            <button type="button" class="btn btn-primary btn-lg px-4 gap-3">Primary button</button>
+            <button type="button" class="btn btn-outline-secondary btn-lg px-4">Secondary</button>
+          </div> -->
+        </div>
+      </div>
+
+    <!-- ------------------------------------------hero End--------------------------------------------------------------- -->
+      <main class="container mb-5">
+        {% for bg in blog reversed %}
+        <div class="bg-light mt-5 p-5 rounded"> 
+         <a href="post/{{bg.id}}" style="text-decoration: none; color: black;">
+            <h1>{{bg.heading}}</h1>
+            <p class="lead">{{bg.desc| truncatewords:30}}</p>
+            <p>{{ bg.date}}</p>
+            <!-- <a class="btn btn-lg btn-primary" href="/docs/5.1/components/navbar/" role="button">View navbar docs »</a> -->
+         </a>
+        </div>
+        {% endfor %}
+      </main>
+    <!-- ------------------------------------------Post end--------------------------------------------------------------- -->
+
+    {% endblock %}
